@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="root"></div>
+  <script>
+    let str = null
+    console.log((Number(str)));
+    console.log(isNaN(Number(str)));
+    console.log(str)
+    console.log(str == null)
+    let root = document.querySelector('#root');
+    console.log(String(root.textContent));
+
+
+
+
+
+
+
+
+    let currOp = "+"
+    function operate(numTxt1, numTxt2) {
+      let opr = numTxt1.slice(numTxt1.length - 1);
+      numTxt1 = parseFloat(numTxt1);
+      numTxt2 = parseFloat(numTxt2);
+      console.log(opr);
+      let operators = {
+        "+": function (a, b) {
+          return a + b;
+        },
+        "-": function (a, b) {
+          return a - b;
+        },
+        "*": function (a, b) {
+          return a * b;
+        },
+        "/": function (a, b) {
+          return a / b;
+        },
+
+      }
+      return operators[opr](numTxt1, numTxt2).toString();
+    }
+    let val = operate("455+", "78999");
+    console.log(val);
+  </script>
+</body>
+
+</html>
